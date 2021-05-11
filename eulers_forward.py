@@ -22,7 +22,10 @@ def eulers_forward(f, x_start, x_stop, h, initial_val):
 def f(x, y):
     return x + 2 * y
 
-
-
 # Sample call:
-print(eulers_forward(f,0,9,0.45,1))
+#print(eulers_forward(f,0,9,0.45,1))
+
+
+def g(x, y):
+    return -2 * y
+print(eulers_forward(g,0,2,0.2,1))
