@@ -7,7 +7,7 @@ def eulers_forward(f, x_start, x_stop, h, initial_val):
         given a function f, start and stop values for x, step size, and initial value of y
     """
     x = np.arange(x_start, x_stop + h, h)
-    y = [0] * len(x)
+    y = np.zeros(len(x))
 
     y[0] = initial_val
 
@@ -23,9 +23,10 @@ def f(x, y):
     return x + 2 * y
 
 # Sample call:
-#print(eulers_forward(f,0,9,0.45,1))
+print(eulers_forward(f,0,9,0.9,1))
 
 
 def g(x, y):
-    return -2 * y
-print(eulers_forward(g,0,2,0.2,1))
+    return -2 * y + 3
+
+#print(eulers_forward(g,0,2,0.2,1))
