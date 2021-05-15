@@ -26,18 +26,11 @@ def eulers_backward(f, x_start, x_stop, h, initial_val):
 
 
 def F(y_f, f, x_f, y_o, h):
-    # The equation to solve for y_f
+    """ The equation to solve for y_f in Euler's backward method """
     return y_f - y_o - f(x_f, y_f) * h
-
-def g(x, y):
-    return -2 * y
 
 def f(x, y):
     return x + 2 * y
 
 # Sample call:
 print(eulers_backward(f,0,9,0.1,1))
-
-# Sample call:
-#print(eulers_backward(g,0,2,0.2,1))
-
