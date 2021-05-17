@@ -16,7 +16,7 @@ def eulers_forward(f, x_start, x_stop, h, initial_val):
 
     mp.plot(x,y)
     mp.show()
-
+    
     return x, y
 
 def f(x, y):

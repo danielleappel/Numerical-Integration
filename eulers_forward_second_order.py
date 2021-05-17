@@ -27,7 +27,7 @@ def f(x, y, y_prime):
     return -4*y_prime - 4*y + math.e**(2*x)
 
 # Sample call:
-#print(eulers_forward_second_order(f,0,10,0.1,1,0))
+print(eulers_forward_second_order(f,0,10,0.1,1,0))
 
 def g(x, y, y_prime):
     return x + 2 * y

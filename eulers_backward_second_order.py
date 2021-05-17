@@ -19,10 +19,13 @@ def eulers_backward_2nd_order(f, x_start, x_stop, h, initial_val_y, initial_val_
         x_n, y_n, y_prime_n = x[i], y[i], y_prime[i]
         x_n_1 = x[i+1]
 
+        # Calculate the backwards y_b'
         y_b_prime = (y_n - y[i-1])/h
 
-        y_f = y_n + h * f(x_n, y_n, y_prime_n) # Use Euler's forward method as an estimate for the next y val
+        # Use Euler's forward method as an estimate for y_f
+        y_f = y_n + h * f(x_n, y_n, y_prime_n) 
 
+        # Solve for the real value of y_f
         y[i + 1] = optimize.fsolve(F, y_f, args=(y[i-1], y_n, f, x_n, h))
     
     mp.plot(x,y)
