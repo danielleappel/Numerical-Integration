@@ -4,7 +4,7 @@ import matplotlib.pyplot as mp
 import math
 
 def eulers_forward_second_order(f, x_start, x_stop, h, initial_val_y, initial_val_y_prime):
-    """ Returns the x and y vectors from euler's forward method
+    """ Returns the x and y vectors from euler's forward method of a second order ODE
         given a function f, start and stop values for x, step size, and initial value of y
     """
     x = np.arange(x_start, x_stop + h, h)
@@ -27,4 +27,10 @@ def f(x, y, y_prime):
     return -4*y_prime - 4*y + math.e**(2*x)
 
 # Sample call:
-print(eulers_forward_second_order(f,0,10,0.1,1,0))
+#print(eulers_forward_second_order(f,0,10,0.1,1,0))
+
+def g(x, y, y_prime):
+    return x + 2 * y
+
+# Sample call:
+print(eulers_forward_second_order(g,0,9,0.1,1,2))

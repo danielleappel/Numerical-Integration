@@ -23,7 +23,7 @@ def f(x, y):
     return x + 2 * y
 
 # Sample call:
-print(eulers_forward(f,0,9,0.9,1))
+print(eulers_forward(f,0,9,0.1,1))
 
 
 def g(x, y):
