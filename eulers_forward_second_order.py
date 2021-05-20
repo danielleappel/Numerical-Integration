@@ -1,9 +1,7 @@
 # Euler's Method
 import numpy as np
-import matplotlib.pyplot as mp
-import math
 
-def eulers_forward_second_order(f, x_start, x_stop, h, initial_val_y, initial_val_y_prime):
+def eulers_forward_2nd_order(f, x_start, x_stop, h, initial_val_y, initial_val_y_prime):
     """ Returns the x and y vectors from euler's forward method of a second order ODE
         given a function f, start and stop values for x, step size, and initial value of y
     """
@@ -18,19 +16,4 @@ def eulers_forward_second_order(f, x_start, x_stop, h, initial_val_y, initial_va
         y[i + 1] = y[i] + h*y_prime[i]
         y_prime[i + 1] = y_prime[i] + h * f(x[i], y[i], y_prime[i])
 
-    mp.plot(x,y)
-    mp.show()
-
     return x, y
-
-def f(x, y, y_prime):
-    return -4*y_prime - 4*y + math.e**(2*x)
-
-# Sample call:
-print(eulers_forward_second_order(f,0,10,0.1,1,0))
-
-def g(x, y, y_prime):
-    return x + 2 * y
-
-# Sample call:
-print(eulers_forward_second_order(g,0,9,0.1,1,2))

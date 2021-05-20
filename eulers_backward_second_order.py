@@ -27,21 +27,10 @@ def eulers_backward_2nd_order(f, x_start, x_stop, h, initial_val_y, initial_val_
 
         # Solve for the real value of y_f
         y[i + 1] = optimize.fsolve(F, y_f, args=(y[i-1], y_n, f, x_n, h))
-    
-    mp.plot(x,y)
-    mp.show()
 
     return x, y
-
 
 def F(y_2, y_0, y_1, f, x_2, h):
     """ The equation to solve for y_f in Euler's backward method """
     y_f = (y_2 - y_1)/h
     return y_2 + y_0 - 2*y_1 - f(x_2, y_2, y_f) * h**2
-
-
-def f(x, y, y_prime):
-    return -4*y_prime - 4*y + math.e**(2*x)
-
-# Sample call:
-print(eulers_backward_2nd_order(f,0,10,0.1,1,0))

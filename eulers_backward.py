@@ -20,7 +20,6 @@ def eulers_backward(f, x_start, x_stop, h, initial_val):
 
     return x, y
 
-
 def F(y_f, f, x_f, y_o, h):
     """ The equation to solve for y_f in Euler's backward method """
     return y_f - y_o - f(x_f, y_f) * h

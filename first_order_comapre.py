@@ -12,7 +12,7 @@ def f_prime(x, y):
 def f(x):
     return -(2*x + 1)/4 + (5/4)*math.e**(2*x)
 
-# Set up call to Euler's method:
+# Set up calls to Euler's method:
 x0, xf = 0, 9
 h, y0 = 0.1, 1
 
@@ -27,6 +27,7 @@ plt.plot(x, y_f, label='Euler\'s Forward Method')
 plt.plot(x, y_b,label='Euler\'s Backward Method')
 plt.plot(x, y_exact_vector, label='Exact solution')
 
+plt.suptitle('Comparing Solutions')
 plt.title(r'$y\prime=x+2y$, $y(0)=1$ $\Rightarrow y=-\frac{2x+1}{4}+\frac{5}{4}e^{2x}$')
 plt.legend()
 plt.show()
@@ -38,6 +39,7 @@ error_b = abs(y_exact_vector - y_b)
 plt.plot(x, error_f, label='Euler\'s Forward Method')
 plt.plot(x, error_b, label='Euler\'s Backward Method')
 
+plt.suptitle('Errors')
 plt.title(r'Error for $y\prime=x+2y$')
 plt.legend()
 plt.show()
@@ -49,6 +51,7 @@ error_ratio_b = error_b[:-1]/error_b[1:]
 plt.plot(x[:-1], error_ratio_f, label='Euler\'s Forward Method')
 plt.plot(x[:-1], error_ratio_b, label='Euler\'s Backward Method')
 
+plt.suptitle('Error ratios')
 plt.title(r'Error ratio for $y\prime=x+2y$')
 plt.legend()
 plt.show()
