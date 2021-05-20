@@ -1,6 +1,5 @@
 # Euler's Method
 import numpy as np
-import matplotlib.pyplot as mp
 from scipy import optimize
 
 def eulers_backward(f, x_start, x_stop, h, initial_val):
@@ -18,9 +17,6 @@ def eulers_backward(f, x_start, x_stop, h, initial_val):
         y_f = y_o + h * f(x_o, y_o) # Use Euler's forward method as an estimate for the next y val
 
         y[i + 1] = optimize.fsolve(F, y_f, args=(f, x_f, y_o, h))
-    
-    mp.plot(x,y)
-    mp.show()
 
     return x, y
 
@@ -28,9 +24,3 @@ def eulers_backward(f, x_start, x_stop, h, initial_val):
 def F(y_f, f, x_f, y_o, h):
     """ The equation to solve for y_f in Euler's backward method """
     return y_f - y_o - f(x_f, y_f) * h
-
-def f(x, y):
-    return x + 2 * y
-
-# Sample call:
-print(eulers_backward(f,0,9,0.9,1))
