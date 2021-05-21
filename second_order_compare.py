@@ -10,7 +10,7 @@ def f_prime_prime(x, y, y_prime):
 
 # The solution to f_prime_prime
 def f(x):
-    return (math.e**(2*x))/14 + 13/(14 * math.e**(4*x/5))
+    return 15/16 * math.e**(-2*x) + (15 * math.e**(-2*x) * x)/4 + 1/16 * math.e**(2*x)
 
 # Set up calls to Euler's method:
 x0, xf = 0, 9
@@ -28,7 +28,7 @@ plt.plot(x, y_b, label='Euler\'s Backward Method')
 plt.plot(x, y_exact_vector, label='Exact solution')
 
 plt.suptitle('Comparing Solutions')
-plt.title(r'$y\prime\prime=-4y\prime-4y+e^{2x}$, $y(0)=1$, $y\prime(0)=2$ $\Rightarrow y=-\frac{e^{2x}}{14}+\frac{13}{14e^{4x/5}}$')
+plt.title(r'$y\prime\prime=-4y\prime-4y+e^{2x}$, $y(0)=1$, $y\prime(0)=2$ $\Rightarrow y=\frac{15}{16}e^{-2x}+\frac{15e^{-2x}x}{4}+\frac{1}{16}e^{2x}$')
 plt.legend()
 plt.show()
 
