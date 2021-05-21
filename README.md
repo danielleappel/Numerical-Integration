@@ -13,7 +13,7 @@ And the first and second order methods are compared in
   - first_order_compare.py
   - second_order_compare.py
 
-respectively. 
+respectively. Several graphs are created in the compare scripts, which can also be found in the graphs folder.
 
 Necessary packages & command line installation
 
